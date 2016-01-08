@@ -5,18 +5,19 @@
   padding: 0.2em 0;
 }
 
-/* Space out content a bit */
-body {
-  padding-top: 20px;
-  padding-bottom: 20px;
+#container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
 }
 
 #left-column {
-  min-width: 400px;
+  flex: 1;
 }
 
 #right-column {
   min-width: 200px;
+  padding: 0 20px 0 20px;
 }
 
 #kernel-container {
@@ -27,11 +28,10 @@ body {
 }
 
 #kernel {
-  position: absolute;
-  top: 0; bottom: 0; left: 0; right: 0;
   display: flex;
   flex-direction: row;
   justify-content: center;
+  align-items: center;
 }
 
 .kernel-row {
@@ -40,14 +40,23 @@ body {
   justify-content: center;
 }
 
-.kernel {
+.kernel, #factor > input {
   width: 25px;
+  height: 25px;
   text-align: center;
 }
 
 #filter {
   width: 100%;
   margin-bottom: 8px;
+}
+
+#factor {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 #grid {
@@ -59,10 +68,11 @@ body {
 #canvas-container {
   position: relative;
   width: 100%;
-  padding-bottom: 100%;
+  padding-bottom: 50%;
 }
 
 #canvas {
+  image-rendering: pixelated;
   position: absolute;
   left: 0; right: 0; top: 0; bottom: 0;
   width: 100%;
